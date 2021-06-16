@@ -38,23 +38,26 @@
 </style>
 </head>
 <body>
-    <center>
-      <p>tap/click to page to start</p>
-<!--        <div id="wrapper"></div> -->
-<div id="target"></div>
-
-    </center>
-
-    <script type="text/javascript" charset="utf-8" src="dist/kaleidoscope.min.js"> </script>
+    <p>tap/click to page to start</p>
+    <div id="container360"></div>
     <script type="text/javascript" charset="utf-8">
-      window.addEventListener('DOMContentLoaded', function(e) {
-        this.viewer = new Kaleidoscope.Video({autoplay: true, muted: false, height: 360, width: 640, source: 'https://video.wixstatic.com/video/8da49a_20e9f7cde7514919991aa55cbd6a92c1/1080p/mp4/file.mp4', containerId: '#target'});
-        this.viewer.render();
-        document.body.addEventListener('click', function() {
-            this.viewer.play();
-        }.bind(this));
-        document.querySelector('#target').addEventListener('touchend', this.viewer.play.bind(this.viewer));
-      })
+(function() {
+    var containerSelector = '#container360';
+    this.viewer = new Kaleidoscope.Video({
+        source: 'https://video.wixstatic.com/video/8da49a_20e9f7cde7514919991aa55cbd6a92c1/1080p/mp4/file.mp4',
+        containerId: containerSelector,
+        height: window.innerHeight,
+        width: window.innerWidth
+    });
+    this.viewer.render();
+    window.onresize = function() {
+        this.viewer.setSize({height: window.innerHeight, width: window.innerWidth});
+    }.bind(this);
+    document.querySelector(containerSelector).addEventListener('touchend', this.viewer.play.bind(this.viewer));
+    document.body.addEventListener('click', function() {
+        this.viewer.play();
+    }.bind(this));
+})();
     </script>
 </body>
 </html>
