@@ -13,12 +13,12 @@
     this.viewer = new Kaleidoscope.Video({
         source: 'https://video.wixstatic.com/video/8da49a_5012524b6f02431b875ed6d0c89e6680/1080p/mp4/file.mp4',
         containerId: containerSelector,
-        height: 100,
-        width: 100
+        height: 100%,
+        width: 100%
     });
     this.viewer.render();
     window.onresize = function() {
-        this.viewer.setSize({height: 100, width: 100});
+        this.viewer.setSize({height: 100%, width: 100%});
     }.bind(this);
     document.querySelector(containerSelector).addEventListener('touchend', this.viewer.play.bind(this.viewer));
     document.body.addEventListener('click', function() {
