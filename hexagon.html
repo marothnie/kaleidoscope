@@ -14,12 +14,12 @@
     this.viewer = new Kaleidoscope.Video({
         source: 'http://thiago.me/demo-360/cool.mp4',
         containerId: containerSelector,
-        height: window.innerHeight - 800px,
-        width: window.innerWidth - 800px
+        height: document.documentElement.clientHeight,
+        width: document.documentElement.clientWidth
     });
     this.viewer.render();
     window.onresize = function() {
-        this.viewer.setSize({height: window.innerHeight - 800px, width: window.innerWidth - 800px});
+        this.viewer.setSize({height: document.documentElement.clientHeight, width: document.documentElement.clientWidth});
     }.bind(this);
     document.querySelector(containerSelector).addEventListener('touchend', this.viewer.play.bind(this.viewer));
     document.body.addEventListener('click', function() {
