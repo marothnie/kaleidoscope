@@ -48,7 +48,7 @@
     <script type="text/javascript" charset="utf-8" src="dist/kaleidoscope.min.js"> </script>
     <script type="text/javascript" charset="utf-8">
       window.addEventListener('DOMContentLoaded', function(e) {
-        this.viewer = new Kaleidoscope.Video({autoplay: true, muted: false, height: 360, width: 640, source: 'http://thiago.me/demo-360/cool.mp4', containerId: '#target'});
+        this.viewer = new Kaleidoscope.Video({autoplay: true, muted: false, height: 360, width: 640, source: 'https://video.wixstatic.com/video/8da49a_20e9f7cde7514919991aa55cbd6a92c1/1080p/mp4/file.mp4', containerId: '#target'});
         this.viewer.render();
         document.body.addEventListener('click', function() {
             this.viewer.play();
