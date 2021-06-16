@@ -12,10 +12,8 @@
 (function() {
     var containerSelector = '#container360';
     this.viewer = new Kaleidoscope.Video({
-        source: 'http://thiago.me/demo-360/cool.mp4',
-        containerId: containerSelector,
-        height: calc(100vh - 200px),
-        width: calc(100vw - 200px)
+        source: 'https://video.wixstatic.com/video/8da49a_20e9f7cde7514919991aa55cbd6a92c1/1080p/mp4/file.mp4',
+        containerId: containerSelector
     });
     this.viewer.render();
     window.onresize = function() {
